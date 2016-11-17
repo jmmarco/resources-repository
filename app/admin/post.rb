@@ -5,6 +5,14 @@ ActiveAdmin.register Post do
 #
 permit_params :title, :body
 
+controller do
+  def create
+  	@post = Post.new({ title: params[:title], body: params[:body] })
+    @post.admin_users_id = current_admin_user.id
+     super
+  end
+end
+
 #
 # or
 #
