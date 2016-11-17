@@ -4,6 +4,12 @@ Rails.application.routes.draw do
   resources :posts
   resources :tags, only: [:index, :show]
   ActiveAdmin.routes(self)
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root to: "home#index"
+  root to: 'posts#index'
+
+  get "/search" => 'posts#index'
+
+  get "/posts/:id" => 'posts#show'
+
 end
