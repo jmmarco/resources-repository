@@ -13,4 +13,6 @@ Rails.application.routes.draw do
 
   get "/posts/:id" => 'posts#show'
 
+  get '/admin/autocomplete_tags', to: 'admin/posts#autocomplete_tags', as: 'autocomplete_tags'
+
 end
