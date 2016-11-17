@@ -4,6 +4,15 @@ ActiveAdmin.register Post do
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
 permit_params :title, :body
+
+controller do
+  def create
+  	@post = Post.new({ title: params[:title], body: params[:body] })
+    @post.admin_users_id = current_admin_user.id
+     super
+  end
+end
+
 #
 # or
 #
