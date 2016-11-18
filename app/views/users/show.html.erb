@@ -1,0 +1,14 @@
+<h3>Works like a charm mother F**K*R</h3>
+<% if @users.books.present? %>
+  <% @user.posts.all.each do |post| %>
+    <div>
+    <h5>post.title</h5>
+    </div>
+    <div>
+      post.body
+    </div>
+  <% end %>
+<% else %>
+  <h4>No posts yet</h4>
+
+<% end %>
