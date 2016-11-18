@@ -13,8 +13,6 @@ class PostsController < ApplicationController
     end
   end
 
-<<<<<<< HEAD
-=======
   def parse
     doc = Nokogiri::HTML(open(params[:data]))
     image = doc.search('meta[property="og:image"]').pluck('content')
@@ -25,6 +23,5 @@ class PostsController < ApplicationController
       format.json { render json: data }
     end
   end
->>>>>>> master
 
 end

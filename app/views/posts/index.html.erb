@@ -29,6 +29,15 @@
               <% end %>
 
               <p><%= post.description %></p>
+              <% if current_user %>
+
+                <% if @is_favorited %>
+                  <i id="<%= post.id %>" class="fa fa-heart red pointer" aria-hidden="true"></i>
+                <% else %>
+                  <i id="<%= post.id %>" class="fa fa-heart pointer" aria-hidden="true"></i>
+                <%end %>
+
+              <% end %>
             </div>
           </div>
         </div>
