@@ -11,12 +11,26 @@
   <hr>
   <div class="row">
       <% @posts.each do |post|  %>
-        <div class="col-md-12">
-          <% if post.link.nil? %>
-            <a href="/posts/<%= post.id  %>"><%= post.title %></a>
-          <% else %>
-            <a href="<%= post.link  %>" target="_blank"><%= post.title %></a>
-          <% end %>
+        <div class="col-md-3 col-sm-6 hero-feature">
+          <div class="thumbnail">
+
+            <% if post.image.nil? %>
+              <img src="http://placehold.it/800x500">
+            <% else %>
+              <img src="post.image">
+            <% end %>
+
+            <div class="caption">
+
+              <% if post.link.nil? %>
+                <a href="/posts/<%= post.id  %>"><%= post.title %></a>
+              <% else %>
+                <a href="<%= post.link  %>" target="_blank"><%= post.title %></a>
+              <% end %>
+
+              <p><%= post.description %></p>
+            </div>
+          </div>
         </div>
       <% end %>
   </div>
