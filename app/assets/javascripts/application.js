@@ -16,3 +16,4 @@
 //= require_tree .
 //= require select2-full
 //= require bootstrap
+//= require magnific-popup
