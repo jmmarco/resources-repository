@@ -12,7 +12,7 @@ ActiveAdmin.register Post do
 	controller do
 
 	  def create
-	  	@post = Post.new({ title: params[:post][:title], link: params[:post][:link], body: params[:post][:body], description: params[:post][:description], image: params[:post][:description] })
+	  	@post = Post.new({ title: params[:post][:title], link: params[:post][:link], body: params[:post][:body], description: params[:post][:description], image: params[:post][:image] })
 	    @post.admin_users_id = current_admin_user.id
 	    @post.tag_list.add(params[:post][:tag_list])
 	    super

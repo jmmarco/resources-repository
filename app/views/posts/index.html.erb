@@ -15,9 +15,9 @@
           <div class="thumbnail">
 
             <% if post.image.nil? %>
-              <img src="http://placehold.it/800x500">
+              <img src="http://placehold.it/800x800">
             <% else %>
-              <img src="post.image">
+              <img src="<%= post.image %>">
             <% end %>
 
             <div class="caption">
