@@ -14,7 +14,13 @@
   </div>
   <%= link_to "Back to search results", search_path %>
   <% if current_user %>
-    <%=link_to "favorite",   new_favorite_path(@post, type: "favorite"), method: :put %>
+
+    <% if @is_favorited %>
+      <i id="<%= @post.id %>" class="fa fa-heart red pointer" aria-hidden="true"></i>
+    <% else %>
+      <i id="<%= @post.id %>" class="fa fa-heart pointer" aria-hidden="true"></i>
+    <%end %>
+
   <% end %>
   <!-- glyphicon glyphicon-heart -->
 </div>

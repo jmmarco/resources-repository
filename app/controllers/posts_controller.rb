@@ -6,19 +6,12 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    if !current_user.favorites.find{|x| x.post_id == @post.id }.nil?
+      @is_favorited = true
+    else
+      @is_favorited = false
+    end
   end
-
-
-
-  # def search
-  #   @q = params[:q]
-  #
-  #   if @q
-  #     @posts = Post.search(@q)
-  #   else
-  #     @posts = Post.all.limit(50)
-  #   end
-  # end
 
 
 end
