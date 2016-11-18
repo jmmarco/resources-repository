@@ -33,6 +33,7 @@ gem 'activeadmin-select2', github: 'mfairburn/activeadmin-select2'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
+gem 'nokogiri'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -41,6 +42,8 @@ group :development, :test do
   gem 'hirb'
   gem 'rspec-rails', '~> 3.5'
 end
+
+gem 'magnific-popup-rails', '~> 1.1.0'
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
