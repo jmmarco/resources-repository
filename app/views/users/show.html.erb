@@ -1,14 +1,17 @@
-<h3>Works like a charm mother F**K*R</h3>
-<% if @users.books.present? %>
-  <% @user.posts.all.each do |post| %>
+<h3>User favorites</h3>
+<% if @user.favorites.present? %>
+  <% @user.favorites.all.each do |favorite| %>
+    <% post = favorite.post %>
     <div>
-    <h5>post.title</h5>
+    <h5><%= post.title %></h5>
     </div>
     <div>
-      post.body
+      <p><%= post.body %></p>
     </div>
   <% end %>
 <% else %>
-  <h4>No posts yet</h4>
+  <br>
+  <br>
+  <h3>No posts yet</h3>
 
 <% end %>
