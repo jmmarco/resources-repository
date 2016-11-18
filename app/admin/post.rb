@@ -7,7 +7,12 @@ ActiveAdmin.register Post do
 
 	filter :tags
 
-	
+	index do
+		column :id
+	  	column :title
+	  	column :description
+	  	actions
+	end
 
 	controller do
 

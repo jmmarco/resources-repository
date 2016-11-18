@@ -33,9 +33,12 @@
 
     <div class="container">
       <%= yield %>
+      <hr>
       <div class="row">
-        <div class="col-md-2 col-md-offset-10">
-          <%= link_to "Admin login", new_admin_user_session_path %>
+        <div class="col-md-3 col-md-offset-10">
+          <footer>
+            <%= link_to "Admin login", new_admin_user_session_path %>
+          </footer>
         </div>
       </div>
     </div>

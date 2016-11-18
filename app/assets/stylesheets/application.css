@@ -15,3 +15,7 @@
  *= require bootstrap.min
  *= require select2
  */
+
+footer {
+	padding-bottom: 30px;
+}
