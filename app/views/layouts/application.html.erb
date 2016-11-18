@@ -16,7 +16,7 @@
         </div>
         <div class="col-md-3">
         <% if current_user %>
-          Welcome: <a href="/users/<%= current_user.id %>"><%= current_user.email %></a>
+          Welcome: <a href="/users/<%= current_user.id %>/show"><%= current_user.email %></a>
           |
           <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
         <% else %>
