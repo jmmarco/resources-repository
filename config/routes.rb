@@ -12,4 +12,8 @@ Rails.application.routes.draw do
 
   get "/posts/:id" => 'posts#show'
 
+  # get "/favorites/new"
+
+  resources :favorites
+
 end
