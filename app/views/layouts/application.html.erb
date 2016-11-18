@@ -9,14 +9,14 @@
   </head>
 
   <body>
-    <div class="container">
+    <div class="container header">
       <div class="row">
         <div class="col-md-9">
-          <h1 class="main-title"><a href="/">Welcome to the Resources Center!</a></h1>
+          <h1 class="main-title"><a class="title" href="/">Welcome to the Resources Center!</a></h1>
         </div>
         <div class="col-md-3">
         <% if current_user %>
-          Welcome: <a href="/users/<%= current_user.id %>"><%= current_user.email %></a>
+          Welcome: <a href="/users/<%= current_user.id %>/show"><%= current_user.email %></a>
           |
           <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
         <% else %>
@@ -28,10 +28,10 @@
         </div>
       </div>
     </div>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
 
     <div class="container">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
       <%= yield %>
       <hr>
       <div class="row">

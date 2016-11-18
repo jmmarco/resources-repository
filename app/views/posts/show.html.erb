@@ -1,15 +1,14 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <h2>Post detail:</h2>
+      <h2><%= @post.title %></h2>
+      <span>Posted <%= time_ago_in_words(@post.created_at) %> ago</span>
     </div>
   </div>
   <div class="row">
     <div class="col-md-3">
-      <p>Title: <%= @post.title %></p>
-      <p>Body: <%= @post.body %></p>
-      <p>Created: <%= @post.created_at %></p>
-      <p>Updated: <%= @post.updated_at %></p>
+      <h3>Body: </h3>
+      <p><%= @post.body %></p>
     </div>
   </div>
   <%= link_to "Back to search results", search_path %>

@@ -14,15 +14,15 @@
         <div class="col-md-3 col-sm-6 hero-feature">
           <div class="thumbnail">
 
-            <% if post.image.nil? %>
-              <img src="http://placehold.it/800x800" class="img-responsive" alt="Responsive image">
+            <% if post.image == "" %>
+              <img src="http://placehold.it/800x800">
             <% else %>
               <img src="<%= post.image %>" class="img-responsive" alt="Responsive image">
             <% end %>
 
             <div class="caption">
 
-              <% if post.link.nil? %>
+              <% if post.link == "" %>
                 <a href="/posts/<%= post.id  %>"><%= post.title %></a>
               <% else %>
                 <a href="<%= post.link  %>" target="_blank"><%= post.title %></a>

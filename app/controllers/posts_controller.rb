@@ -10,9 +10,9 @@ class PostsController < ApplicationController
 
   def parse
     doc = Nokogiri::HTML(open(params[:data]))
-    image = doc.search('meta[property="og:image"]')[0].values[0]
-    description = doc.search('meta[property="og:description"]')[0].values[0]
-    title = doc.search('meta[property="og:title"]')[0].values[0]
+    image = doc.search('meta[property="og:image"]').pluck('content')
+    description = doc.search('meta[property="og:description"]').pluck('content')
+    title = doc.search('meta[property="og:title"]').pluck('content')
     respond_to do |format|
       data = { :title => title, :description => description, :image => image }
       format.json { render json: data }
