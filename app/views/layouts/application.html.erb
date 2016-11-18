@@ -9,24 +9,35 @@
   </head>
 
   <body>
-  <div>
-    <%= link_to "Sign In", new_user_session_path %>
-    <% if current_user %>
-      <%= link_to "Sign Out", destroy_user_session_path %>
-    <% end %>
-  </div>
     <div class="container">
       <div class="row">
-        <div class="col-md-12">
-          <h1>Welcome to the Resources Center!</h1>
+        <div class="col-md-9">
+          <h1 class="main-title"><a href="/">Welcome to the Resources Center!</a></h1>
+        </div>
+        <div class="col-md-3">
+        <% if current_user %>
+          Welcome: <a href="/users/<%= current_user.id %>"><%= current_user.email %></a>
+          |
+          <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+        <% else %>
+          Hi Stranger!
+          <%= link_to "Sign In", new_user_session_path %>
+          |
+          <%= link_to "Sign Up", new_user_registration_path %>
+        <% end %>
         </div>
       </div>
     </div>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <%= yield %>
-  <div>
-  <%= link_to "Admin login", new_admin_user_session_path %>
-  </div>
+
+    <div class="container">
+      <%= yield %>
+      <div class="row">
+        <div class="col-md-2 col-md-offset-10">
+          <%= link_to "Admin login", new_admin_user_session_path %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

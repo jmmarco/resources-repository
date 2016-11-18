@@ -13,4 +13,8 @@
     </div>
   </div>
   <%= link_to "Back to search results", search_path %>
+  <% if current_user %>
+    <%=link_to "favorite",   new_favorite_path(@post, type: "favorite"), method: :put %>
+  <% end %>
+  <!-- glyphicon glyphicon-heart -->
 </div>
