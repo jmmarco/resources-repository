@@ -17,4 +17,8 @@ Rails.application.routes.draw do
 
   get '/admin/autocomplete_tags', to: 'admin/posts#autocomplete_tags', as: 'autocomplete_tags'
 
+  # get "/favorites/new"
+
+  resources :favorites
+
 end
