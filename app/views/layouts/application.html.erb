@@ -10,10 +10,10 @@
   </head>
 
   <body>
-    <div class="container">
+    <div class="container header">
       <div class="row">
         <div class="col-md-9">
-          <h1 class="main-title"><a href="/">Welcome to the Resources Center!</a></h1>
+          <h1 class="main-title"><a class="title" href="/">Welcome to the Resources Center!</a></h1>
         </div>
         <div class="col-md-3">
         <% if current_user %>
@@ -29,14 +29,17 @@
         </div>
       </div>
     </div>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
 
     <div class="container">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
       <%= yield %>
+      <hr>
       <div class="row">
-        <div class="col-md-2 col-md-offset-10">
-          <%= link_to "Admin login", new_admin_user_session_path %>
+        <div class="col-md-3 col-md-offset-10">
+          <footer>
+            <%= link_to "Admin login", new_admin_user_session_path %>
+          </footer>
         </div>
       </div>
     </div>

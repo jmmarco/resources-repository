@@ -16,3 +16,21 @@
  *= require select2
  *= require style
  */
+
+footer {
+	padding-bottom: 30px;
+}
+
+.header {
+	margin-top: 30px;
+}
+
+a.title {
+	color: black;
+	text-decoration: none;
+}
+
+a.title:hover {
+	text-decoration: none;
+	color: black;
+}

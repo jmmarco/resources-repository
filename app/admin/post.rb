@@ -3,16 +3,21 @@ ActiveAdmin.register Post do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-	permit_params :title, :body
+	permit_params :title, :body, :description, :image
 
 	filter :tags
 
-	
+	index do
+		column :id
+	  	column :title
+	  	column :description
+	  	actions
+	end
 
 	controller do
 
 	  def create
-	  	@post = Post.new({ title: params[:post][:title], link: params[:post][:link], body: params[:post][:body] })
+	  	@post = Post.new({ title: params[:post][:title], link: params[:post][:link], body: params[:post][:body], description: params[:post][:description], image: params[:post][:image] })
 	    @post.admin_users_id = current_admin_user.id
 	    @post.tag_list.add(params[:post][:tag_list])
 	    super
