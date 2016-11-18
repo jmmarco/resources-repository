@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
+  has_many :favorites
   acts_as_taggable_on :tags
 
   # Search method for resources (posts)
