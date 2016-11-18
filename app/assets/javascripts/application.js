@@ -15,3 +15,4 @@
 //= require turbolinks
 //= require_tree .
 //= require select2-full
+//= require magnific-popup

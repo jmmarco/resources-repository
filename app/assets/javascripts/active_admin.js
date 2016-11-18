@@ -32,6 +32,23 @@ $(document).ready(function(){
             templateSelection: function(item, page){  return item.name; }
         });
     });
+
+	$('#post_link').on('blur', function(){
+		var link = $(this).val();
+		$("#dialog").dialog();
+		var ajaxRequest = $.ajax({
+			url: '/parse/nokogiri',
+			data: {data: link},
+			type: 'post'
+		})
+		ajaxRequest.done(function(response){
+			$("#post_description").val(response.description);
+			$("#post_title").val(response.title);
+			$("#post_image").val(response.image);
+			$("#dialog").dialog("close");
+		})
+		
+	});
 })
 
 

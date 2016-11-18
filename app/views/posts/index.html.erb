@@ -12,7 +12,11 @@
   <div class="row">
       <% @posts.each do |post|  %>
         <div class="col-md-12">
-          <a href="/posts/<%= post.id  %>"><%= post.title %></a>
+          <% if post.link.nil? %>
+            <a href="/posts/<%= post.id  %>"><%= post.title %></a>
+          <% else %>
+            <a href="<%= post.link  %>" target="_blank"><%= post.title %></a>
+          <% end %>
         </div>
       <% end %>
   </div>

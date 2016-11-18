@@ -8,17 +8,15 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
-
-
-  # def search
-  #   @q = params[:q]
-  #
-  #   if @q
-  #     @posts = Post.search(@q)
-  #   else
-  #     @posts = Post.all.limit(50)
-  #   end
-  # end
-
+  def parse
+    doc = Nokogiri::HTML(open(params[:data]))
+    image = doc.search('meta[property="og:image"]')[0].values[0]
+    description = doc.search('meta[property="og:description"]')[0].values[0]
+    title = doc.search('meta[property="og:title"]')[0].values[0]
+    respond_to do |format|
+      data = { :title => title, :description => description, :image => image }
+      format.json { render json: data }
+    end
+  end
 
 end
