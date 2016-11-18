@@ -6,8 +6,15 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    if !current_user.favorites.find{|x| x.post_id == @post.id }.nil?
+      @is_favorited = true
+    else
+      @is_favorited = false
+    end
   end
 
+<<<<<<< HEAD
+=======
   def parse
     doc = Nokogiri::HTML(open(params[:data]))
     image = doc.search('meta[property="og:image"]').pluck('content')
@@ -18,5 +25,6 @@ class PostsController < ApplicationController
       format.json { render json: data }
     end
   end
+>>>>>>> master
 
 end
